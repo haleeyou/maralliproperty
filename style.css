@@ -1,24 +1,18 @@
-body {
-    font-family: Arial, sans-serif;
+/* General Reset */
+* {
     margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
     background-color: #f7f7f7;
     color: #333;
+    line-height: 1.6;
   }
   
-  /* Ensures logo and h1 are side-by-side */
-.branding {
-    display: flex;
-    align-items: center;
-  }
-  
-  /* Optional: adjust logo size */
-  .logo {
-    height: 40px; /* adjust as needed */
-    width: auto;
-    margin-right: 10px; /* space between logo and text */
-  }
-  
-  /* Layout for the whole header */
+  /* Header Styles */
   header {
     background: #2c3e50;
     color: white;
@@ -29,36 +23,55 @@ body {
     flex-wrap: wrap;
   }
   
+  /* Logo + H1 side by side */
+  .branding {
+    display: flex;
+    align-items: center;
+  }
+  
+  .logo {
+    height: 40px;
+    width: auto;
+    margin-right: 10px;
+  }
+  
   header h1 {
-    margin: 0;
     font-size: 1.5rem;
   }
   
+  /* Navigation Styles */
   nav {
     display: flex;
-    gap: 1.5rem; /* space between links */
+    gap: 1.5rem;
+    flex-wrap: wrap;
   }
   
   nav a {
     color: white;
     text-decoration: none;
     font-weight: bold;
+    transition: color 0.3s ease;
   }
-
-
   
+  nav a:hover {
+    color: #f1c40f;
+  }
+  
+  /* Hero Section */
   .hero {
     background: url('images/house1.jpg') no-repeat center center/cover;
-    color: black;
+    color: white;
     text-align: center;
     padding: 100px 20px;
   }
   
+  /* Section Defaults */
   .section {
     padding: 2rem;
     text-align: center;
   }
   
+  /* Cards Layout */
   .cards {
     display: flex;
     justify-content: center;
@@ -71,7 +84,13 @@ body {
     border-radius: 8px;
     padding: 1rem;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    width: 300px;
+    width: 100%;
+    max-width: 300px;
+    transition: transform 0.3s;
+  }
+  
+  .card:hover {
+    transform: translateY(-5px);
   }
   
   .card img {
@@ -81,11 +100,50 @@ body {
     border-radius: 5px;
   }
   
+  /* Footer */
   footer {
     background: #2c3e50;
     color: white;
     text-align: center;
     padding: 1rem;
     margin-top: 2rem;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    header {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    nav {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.75rem;
+      margin-top: 1rem;
+    }
+  
+    .hero {
+      padding: 60px 20px;
+    }
+  
+    .cards {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .card {
+      width: 90%;
+    }
+  
+    .branding {
+      flex-direction: row;
+      align-items: center;
+      margin-bottom: 1rem;
+    }
+  
+    header h1 {
+      font-size: 1.25rem;
+    }
   }
   
